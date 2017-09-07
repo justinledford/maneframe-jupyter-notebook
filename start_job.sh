@@ -1,2 +1,5 @@
+NODETYPE=development
+TIME_LIMIT=120
+
 export LOGIN_NODE=`cat /etc/hostname`
-srun -p gpgpu-1 scratch/jupyter-notebook.sh --export=LOGIN_NODE
+srun -p $NODETYPE scratch/jupyter-notebook.sh -t $TIME_LIMIT --export=LOGIN_NODE
