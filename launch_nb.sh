@@ -26,9 +26,16 @@ ssh -L $NB_PORT:localhost:$NB_PORT \
        -o "StrictHostKeyChecking no" &
 SSHPID=$!
 
-echo "Jupyter notebook server now available at http://localhost:$NB_PORT?token=$NB_TOKEN"
+URL="http://localhost:$NB_PORT?token=$NB_TOKEN"
+echo "Jupyter notebook server now available at $URL"
 
+# Open in default browser
+case $(uname -s) in
+    Linux*) xdg-open "$URL" &>/dev/null;;
+    Darwin*) open "$URL" &>/dev/null;;
+esac
 
+# Interrupt handler
 trap ctrl_c INT
 function ctrl_c() {
     echo "Closing notebook server"
