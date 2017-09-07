@@ -1,10 +1,4 @@
 #!/bin/bash
-#SBATCH -J jupyter-notebook
-#SBATCH -o logs/output-%j.txt
-#SBATCH -e logs/error-%j.txt
-#SBATCH -p gpgpu-1
-#SBATCH -t 1440
-#SBATCH -D /users/jledford/scratch/jupyter-notebooks
 
 # load modules
 module load python/3
