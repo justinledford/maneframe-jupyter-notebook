@@ -14,7 +14,7 @@ rm -f .mfnb.env
 # NB_LOGIN_NODE - The login node that the compute node is tunnelling to
 # NB_TOKEN - Jupyter notebook token
 # NB_JOB_ID - Slurm job ID
-ssh ${USERNAME}@m2.smu.edu -i ~/.ssh/mf2 'bash -s' > .mfnb.env < start_job.sh &
+ssh ${USERNAME}@m2.smu.edu -i ~/.ssh/mf2 'bash -s' > .mfnb.env < start_nb_server.sh &
 
 # Wait until env file is filled with variables
 while true; do

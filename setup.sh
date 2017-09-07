@@ -12,4 +12,4 @@ scp ~/.ssh/mf2 ~/.ssh/mf2.pub ${USERNAME}@m2.smu.edu:~/.ssh
 ssh ${USERNAME}@m2.smu.edu 'cat ~/.ssh/mf2.pub >> ~/.ssh/authorized_keys'
 
 # Copy jupyter notebook script to mf2
-scp -i ~/.ssh/mf2 jupyter-notebook.sh ${USERNAME}@m2.smu.edu:~/scratch
+scp -i ~/.ssh/mf2 jupyter_notebook.sh ${USERNAME}@m2.smu.edu:~/scratch
