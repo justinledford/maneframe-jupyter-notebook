@@ -1,3 +1,6 @@
+This is a set of scripts to launch a Jupyter Notebook server on ManeFrame2, and handle all
+the port forwarding. All you have to do is run one script.
+
 Setup:
 - Fill in `USERNAME` in `setup.sh` and `launch_nb.sh`  
 - Run `setup.sh`  
@@ -13,5 +16,6 @@ Todo:
 - Check that selected port isn't already in use  
 - Put `start_nb_server.sh` inline into `launch_nb.sh`  
 - Add args for time, node type and username  
+- Generalize for any supercomputer running SLURM  
 
 Should be compatible with Linux and OS X
