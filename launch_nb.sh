@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERNAME=jledford
+USERNAME=
 
 echo "Launching jupyter notebook..."
 

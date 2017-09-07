@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERNAME=jledford
+USERNAME=
 
 # Generate key pair
 ssh-keygen -f ~/.ssh/mf2 -t rsa -N ''
