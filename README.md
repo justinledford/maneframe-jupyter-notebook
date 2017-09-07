@@ -5,7 +5,9 @@ Setup:
 
 Usage:
 - Run `launch_nb.sh`  
-  - If successful, your default browser should open a tab with the Jupyter Notebook home.  
+  - If successful, your default browser should open a tab with the Jupyter Notebook home.
+- Edit `TIME_LIMIT` in `start_job.sh` if you need the compute node to run for more than 2 hours
+- Edit `NODETYPE` in `start_job.sh` to use a different node type
 
 Todo:
 - Check that selected port isn't already in use  
