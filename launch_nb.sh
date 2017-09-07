@@ -6,7 +6,7 @@ echo "Launching jupyter notebook..."
 
 rm -f .mfnb.env
 
-ssh mf2 'bash -s' > .mfnb.env < start_job.sh &
+ssh ${USERNAME}@m2.smu.edu -i ~/.ssh/mf2 'bash -s' > .mfnb.env < start_job.sh &
 
 # Wait until env file created
 while true; do
