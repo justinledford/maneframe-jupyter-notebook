@@ -1,16 +1,14 @@
 Setup:
-- Generate a SSH keypair named `mf2`
-  - Place both keys in your local `.ssh` and in your ManeFrame2 `.ssh`   
-    - (Both keys are needed on ManeFrame2 for the tunnel from compute nodes back to login nodes)
-  - Add `mf2.pub` to `~/.ssh/authorized_keys`
-- Place `jupyter-notebook.sh` in `~/scratch/` on ManeFrame2
-- Edit `USERNAME` in `launch_nb.sh`
+- Fill in `USERNAME` in `setup.sh` and `launch_nb.sh`  
+- Run `setup.sh`  
+  - This will generate a SSH key pair, copy to ManeFrame2, along with a script to launch the notebook server  
 
 Usage:
-- Run `launch_nb.sh`, if successful, a URL will be given that can be opened on your local machine.
+- Run `launch_nb.sh`  
+  - If successful, your default browser should open a tab with the Jupyter Notebook home.  
 
 Todo:
-- Check that selected port isn't already in use
-- Setup script
-- Put `start_job.sh` inline into `launch_nb.sh`
-- Auto open in browser
+- Check that selected port isn't already in use  
+- Put `start_job.sh` inline into `launch_nb.sh`  
+
+Should be compatible with Linux and OS X
