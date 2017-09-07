@@ -4,11 +4,19 @@ USERNAME=
 
 echo "Launching jupyter notebook..."
 
+# Remove previous env file
 rm -f .mfnb.env
 
+# Start jupyter notebook on compute node
+# and get the following variables
+#
+# NB_PORT - The port that jupyter notebook is running on
+# NB_LOGIN_NODE - The login node that the compute node is tunnelling to
+# NB_TOKEN - Jupyter notebook token
+# NB_JOB_ID - Slurm job ID
 ssh ${USERNAME}@m2.smu.edu -i ~/.ssh/mf2 'bash -s' > .mfnb.env < start_job.sh &
 
-# Wait until env file created
+# Wait until env file is filled with variables
 while true; do
     if [ -s .mfnb.env ]; then
         break
@@ -16,9 +24,10 @@ while true; do
     sleep 1
 done
 
+# Load environment variables
 source .mfnb.env
 
-# forward to login node
+# Forward requests on NB_PORT to login node
 ssh -L $NB_PORT:localhost:$NB_PORT \
        ${USERNAME}@${NB_LOGIN_NODE}.m2.smu.edu \
        -i ~/.ssh/mf2 \
