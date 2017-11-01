@@ -5,8 +5,14 @@ module load python/3
 module load tensorflow
 
 # start jupyter notebook server
+
 #TODO: check if port is in use
 PORT=$(echo "49152+$(echo ${SLURM_JOBID} | tail -c 4)" | bc)
+
+# Needed if jupyter notebook is trying to write to a system level
+# directory
+unset XDG_RUNTIME_DIR
+
 jupyter notebook --no-browser --ip=127.0.0.1 --port=$PORT > /dev/null 2>&1 &
 
 # sleep a few seconds to wait for notebook server to start
