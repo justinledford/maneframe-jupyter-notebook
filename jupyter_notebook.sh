@@ -2,7 +2,7 @@
 
 # load modules
 module load python/3
-module load tensorflow
+module load tensorflow/1.2_gpu
 
 # start jupyter notebook server
 
