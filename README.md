@@ -7,15 +7,14 @@ Setup:
   - This will generate a SSH key pair, copy to ManeFrame2, along with a script to launch the notebook server  
 
 Usage:
+- Edit `TIME_LIMIT` in `launch_nb.sh` if you need the compute node to run for more than 2 hours
+- Edit `NODETYPE` in `launch_nb.sh` to use a different node type
 - Run `launch_nb.sh`  
   - If successful, your default browser should open a tab with the Jupyter Notebook home.
-- Edit `TIME_LIMIT` in `start_nb_server.sh` if you need the compute node to run for more than 2 hours
-- Edit `NODETYPE` in `start_nb_server.sh` to use a different node type
+
 
 Todo:
-- Check that selected port isn't already in use  
-- Put `start_nb_server.sh` inline into `launch_nb.sh`  
-- Add args for time, node type and username  
+- Check that selected port isn't already in use   
 - Generalize for any supercomputer running SLURM  
 
 Should be compatible with Linux and OS X
