@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# This script is executed on a compute node from srun
 
 # load modules
 module load python/3

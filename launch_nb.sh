@@ -1,6 +1,11 @@
 #!/bin/bash
+#
+# Run this script from your local machine to launch a notebook
+#
 
 USERNAME=
+NODETYPE=
+TIME_LIMIT=
 
 echo "Launching jupyter notebook..."
 
@@ -14,7 +19,10 @@ rm -f .mfnb.env
 # NB_LOGIN_NODE - The login node that the compute node is tunnelling to
 # NB_TOKEN - Jupyter notebook token
 # NB_JOB_ID - Slurm job ID
-ssh ${USERNAME}@m2.smu.edu -i ~/.ssh/mf2 'bash -s' > .mfnb.env < start_nb_server.sh &
+ssh ${USERNAME}@m2.smu.edu -i ~/.ssh/mf2 'bash -s' > .mfnb.env <<< "\
+export LOGIN_NODE=\`cat /etc/hostname\`
+srun -p $NODETYPE scratch/jupyter_notebook.sh -t $TIME_LIMIT --export=LOGIN_NODE
+" &
 
 # Wait until env file is filled with variables
 while true; do

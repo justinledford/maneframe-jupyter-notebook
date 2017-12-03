@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# This script should be executed once to setup the key pairs and copy script
 
 USERNAME=
 
